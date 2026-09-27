@@ -156,3 +156,38 @@ Estructura:
 - Terminator/Hoja/Null Handler: no delega, finaliza la recursión devolviendo caso base.
 
 Cada objeto conoce cómo continuar sin lógica externa ni ifs por tipo.
+
+### Según Peter Naur el conocimiento del programador que tiene la teoría de un programa trasciende el de su documentación en al menos tres áreas. Citar brevemente esas 3 áreas.
+
+**Explicar el modelado de la realidad:** Poder explicar de qué manera el programa se corresponde con el dominio del mundo real y cómo lo modela.
+**Justificar el diseño:** Explicar por qué el modelo fue construido de esa forma específica y no de otra manera, justificando las elecciones tomadas frente a las alternativas descartadas.
+**Modificar el programa frente a cambios:** Poder realizar modificaciones coherentes al código cuando la realidad cambia, conservando la integridad conceptual y la simplicidad del sistema gracias al entendimiento profundo de su estructura.
+
+### Explique la psicología de la causalidad entorno al diseño de objetos cotidianos según Norman. De un ejemplo.
+Norman explica que los seres humanos establecen de manera natural una **causalidad mental** relacionando sus acciones inmediatas con los resultados que observan en el entorno. La mente asume que cualquier evento que ocurra justo después de realizar una acción fue provocado por dicha acción
+Cuando un objeto no proporciona la visibilidad o la retroalimentación (*feedback*) adecuada, el diseño induce a dos fallos psicológicos de causalidad:
+
+**Falsa causalidad:** El usuario le atribuye la causa de un evento no deseado a una acción suya que coincidió solo por azar
+**Sensación de ineficacia:** Al no percibir un resultado visible inmediato tras presionar o mover un control, la persona asume que su orden no funcionó y tiende a repetir la acción en exceso.
+**Ejemplo:** Tocar una terminal de computadora en el instante preciso en que el sistema falla y concluir erróneamente que el propio toque causó la avería. Del mismo modo, en los procesadores de texto o teclados de llamada, al presionar un comando y no recibir un efecto evidente en pantalla, el usuario suele reingresar los comandos repetidamente, lo que genera ejecuciones indeseadas acumuladas.
+
+### Explique cómo varía el acoplamiento al partir de una solución con un método principal en algún objeto, donde luego ese método se reífica a un Method Object. Indique en su respuesta claramente si el mismo baja, sube o se mantiene esencialmente igual. Puede usar ejemplos si necesita.
+
+Al aplicar esta refactorización, el acoplamiento **baja**
+
+**Explicación:** Al reificar un método extenso hacia un **Method Object**, la lógica y el algoritmo complejo se encapsulan fuera del objeto original
+Las variables temporales y los parámetros de entrada del método pasan a convertirse en variables de instancia y estado interno de la nueva clase creada
+Esto permite dividir la secuencia en métodos auxiliares más pequeños dentro del nuevo objeto sin necesidad de pasar largas listas de parámetros entre ellos
+
+Como resultado, la clase original disminuye su carga de responsabilidad y se desacopla del detalle algorítmico, limitándose únicamente a instanciar el Method Object y delegarle la ejecución enviándole su mensaje principal.
+
+### Explicar brevemente la noción de teoría según Ryle
+Para Ryle, poseer una teoría no consiste únicamente en saber realizar una tarea (*knowing how*), sino que implica la habilidad de explicarla, justificarla, razonar sobre ella y responder preguntas al respecto. Peter Naur retoma esta concepción en "Programming as Theory Building" para argumentar que la programación es esencialmente una actividad de construcción de teoría por parte del equipo de desarrollo, más que un proceso de redacción de código y documentación estática.
+
+### Según Norman ¿Para qué sirve un modelo conceptual?
+El modelo conceptual es la representación o idea mental que se forma el usuario sobre el funcionamiento interno de un objeto o sistema. Sirve para que las personas puedan comprender la relación entre los controles e interacciones disponibles y los resultados que produce el sistema, permitiéndoles predecir el efecto de sus acciones y utilizar el objeto de manera efectiva e intuitiva sin depender de instrucciones extensas.
+
+### Nombre y explique las 3 (simples y concretas) ideas en las que se basa Self.
+**Prototipos (Concreción):** Elimina la distinción entre clases e instancias. No existen las clases; cualquier objeto es concreto y puede cumplir el rol de un objeto individual o servir como prototipo a partir del cual se clonarán nuevos objetos.
+**Slots (Economía conceptual / Navaja de Ockham):** Unifica las variables y los métodos dentro de una misma estructura denominada *slot*. Un slot puede almacenar tanto un valor (un objeto que se retorna a sí mismo) como un comportamiento (un método), reduciendo el número de conceptos básicos del lenguaje.
+**Mensaje como mecanismo fundamental (Mensajes en la base):** El envío de mensajes es la operación básica para toda interacción. El acceso al estado de un objeto no se hace mediante variables directas, sino enviando mensajes al receptor (`self`), igualando la forma en que se accede al estado y al comportamiento.
