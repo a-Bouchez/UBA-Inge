@@ -159,9 +159,9 @@ Cada objeto conoce cómo continuar sin lógica externa ni ifs por tipo.
 
 ### Según Peter Naur el conocimiento del programador que tiene la teoría de un programa trasciende el de su documentación en al menos tres áreas. Citar brevemente esas 3 áreas.
 
-**Explicar el modelado de la realidad:** Poder explicar de qué manera el programa se corresponde con el dominio del mundo real y cómo lo modela.
-**Justificar el diseño:** Explicar por qué el modelo fue construido de esa forma específica y no de otra manera, justificando las elecciones tomadas frente a las alternativas descartadas.
-**Modificar el programa frente a cambios:** Poder realizar modificaciones coherentes al código cuando la realidad cambia, conservando la integridad conceptual y la simplicidad del sistema gracias al entendimiento profundo de su estructura.
+- **Explicar el modelado de la realidad:** Poder explicar de qué manera el programa se corresponde con el dominio del mundo real y cómo lo modela.
+- **Justificar el diseño:** Explicar por qué el modelo fue construido de esa forma específica y no de otra manera, justificando las elecciones tomadas frente a las alternativas descartadas.
+- **Modificar el programa frente a cambios:** Poder realizar modificaciones coherentes al código cuando la realidad cambia, conservando la integridad conceptual y la simplicidad del sistema gracias al entendimiento profundo de su estructura.
 
 ### Explique la psicología de la causalidad entorno al diseño de objetos cotidianos según Norman. De un ejemplo.
 Norman explica que los seres humanos establecen de manera natural una **causalidad mental** relacionando sus acciones inmediatas con los resultados que observan en el entorno. La mente asume que cualquier evento que ocurra justo después de realizar una acción fue provocado por dicha acción
